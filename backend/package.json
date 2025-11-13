@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "react-pdf-highlighter-extended": "^8.1.0"
+  }
+}

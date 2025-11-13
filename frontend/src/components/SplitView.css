@@ -1,0 +1,25 @@
+/* Parent container: horizontal flex layout */
+.split-container {
+    display: flex;
+    height: 100vh;        /* full viewport height */
+    width: 100vw;         /* full viewport width */
+    overflow: hidden;     /* prevent scroll on parent */
+  }
+  
+  /* Left panel (PDF) */
+  .split-left {
+    flex: 1;              /* takes 50% of width */
+    border-right: 1px solid #ddd;
+    padding: 16px;
+    overflow-y: auto;     /* scrollable if content is taller */
+    background-color: #f9f9f9;
+  }
+  
+  /* Right panel (Chat / Summarizer) */
+  .split-right {
+    flex: 1;              /* takes remaining 50% */
+    padding: 16px;
+    overflow-y: auto;
+    background-color: #fff;
+  }
+  

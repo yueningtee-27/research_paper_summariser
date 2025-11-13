@@ -1,0 +1,1565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">A forecasting approach for hospital bed capacity planning using machine learning and deep learning with application to public hospitals</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Healthcare</forename><surname>Analytics</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Industrial Engineering</orgName>
+								<orgName type="institution">Babol Noshirvani University of Technology</orgName>
+								<address>
+									<settlement>Babol</settlement>
+									<country key="IR">Iran</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Younes</forename><surname>Mahmoudian</surname></persName>
+							<email>younesmahmoudian@nit.ac.ir</email>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Industrial Engineering</orgName>
+								<orgName type="institution">Babol Noshirvani University of Technology</orgName>
+								<address>
+									<settlement>Babol</settlement>
+									<country key="IR">Iran</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Arash</forename><surname>Nemati</surname></persName>
+							<email>r.nemati@nit.ac.ir</email>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Industrial Engineering</orgName>
+								<orgName type="institution">Babol Noshirvani University of Technology</orgName>
+								<address>
+									<settlement>Babol</settlement>
+									<country key="IR">Iran</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Abdul</forename><forename type="middle">Sattar</forename><surname>Safaei</surname></persName>
+							<email>s.safaei@nit.ac.ir</email>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Industrial Engineering</orgName>
+								<orgName type="institution">Babol Noshirvani University of Technology</orgName>
+								<address>
+									<settlement>Babol</settlement>
+									<country key="IR">Iran</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">A forecasting approach for hospital bed capacity planning using machine learning and deep learning with application to public hospitals</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">A8F8F7639B1939C5CC44784D73472BD5</idno>
+					<idno type="DOI">10.1016/j.health.2023.100245</idno>
+					<note type="submission">Received 22 May 2023; Received in revised form 30 July 2023; Accepted 10 August 2023</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2025-11-10T05:13+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>Machine learning Deep learning Hospital bed capacity forecasting Data analytics Classification Statistical inference</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Hospital Bed Capacity (HBC) planning affects economic and social sustainability in healthcare through bed capacity efficiency and medical treatment accessibility. Conventionally, this problem is solved using programming or simulation models with assumptions and limits. Forecasting the HBC using time series data on bed occupancy has been considered but not with factors such as the Number of Hospitalized Patients (NHP) and patient's length of stay (LOS). This study proposes a data-driven methodology to forecast the HBC using Machine Learning (ML) and Deep Learning (DL). The LOS classification is performed using several ML techniques, including the Bayesian network, K-nearest neighbor, support vector machine, decision tree, and Linear regression. Also, the seasonal autoregressive integrated moving average, linear regression and Long short-term memory neural network are applied for the NHP forecasting. The forecasting and descriptive analysis outputs based on LOS classes are directly applied to a simple mathematical model to predict the required bed capacity. This methodology is applied in a case study in a heart ward at a public hospital. The data set includes 51231 records, and ML and DL algorithms are developed in Python. Results show that the heart ward's bed capacity must be raised from 45 to 137 by 2026. In addition, several managerial recommendations are formulated.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<facsimile>
+		<surface n="1" ulx="0.0" uly="0.0" lrx="595.276" lry="793.701"/>
+		<surface n="2" ulx="0.0" uly="0.0" lrx="595.276" lry="793.701"/>
+		<surface n="3" ulx="0.0" uly="0.0" lrx="595.276" lry="793.701"/>
+		<surface n="4" ulx="0.0" uly="0.0" lrx="595.276" lry="793.701"/>
+		<surface n="5" ulx="0.0" uly="0.0" lrx="595.276" lry="793.701"/>
+		<surface n="6" ulx="0.0" uly="0.0" lrx="595.276" lry="793.701"/>
+		<surface n="7" ulx="0.0" uly="0.0" lrx="595.276" lry="793.701"/>
+		<surface n="8" ulx="0.0" uly="0.0" lrx="595.276" lry="793.701"/>
+		<surface n="9" ulx="0.0" uly="0.0" lrx="595.276" lry="793.701"/>
+		<surface n="10" ulx="0.0" uly="0.0" lrx="595.276" lry="793.701"/>
+		<surface n="11" ulx="0.0" uly="0.0" lrx="595.276" lry="793.701"/>
+	</facsimile>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>The Hospital Bed Capacity (HBC) forecasting problem has taken significant attention because of its effects on the sustainability of hospitals, particularly in terms of hospital economic efficiency, and patient satisfaction <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref>. The traditional approach to this problem is using simulation or programming models involving several issues, such as the need for some assumptions on attributes of some quantities, for example, the probability distribution of some factors <ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref>. In addition, reaching optimum or reasonable solutions is a big challenge of the bed capacity programming models, particularly in the case of large-scale, multi-objective, and integer models. Consequently, using model-free methods for HBC forecasting seems to be a facilitator. Nowadays, business analytics, including Data Analysis (DA), Machine Learning (ML), and Deep Learning (DL) techniques, are widely used as model-free methods in different businesses of services and manufacturing to reach insights on market trends, such as customers' behavior, costs, and technology by no reliance on the simulation or mathematical models <ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref>. Also, a reasonable number of their successful applications in the healthcare sector, such as Length of Stay (LOS) forecasting, patient classification, healthcare resources forecasting, and disease diagnosis have been illustrated <ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref><ref type="bibr" target="#b17">[18]</ref>. In recent years, a few researchers applied some forecaster tools of ML to predict the required The rest of the paper is as follows. Section 2 reviews the corresponding literature, and Section 3 introduces the proposed data-driven methodology. Section 4 contains the computational results of applying the proposed hybrid data-driven approach in the case study, and finally, Section 5 involves the conclusions, limitations, and recommendations for future works.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Literature review</head><p>The literature on healthcare centers' bed capacity forecasting is reviewed to clear the paper's contributions and novelty aspects. <ref type="bibr" target="#b21">Bachouch et al. (2012)</ref> considered some limitations, such as budget, shared resources, and beds needed by acute and emergency patients, in the problem of hospital bed planning. Using constraints such as incompatibility between pathologies and continuity of care, an integer linear programming model was proposed, and the results were compared using several solvers such as the CPLEX <ref type="bibr" target="#b21">[22]</ref>. Ben Abdelaziz and Masmoudi (2012) studied the bed capacity of 157 public hospitals in Tunisia when the demand for beds is random using a multi-objective stochastic programming model to allocate the beds to the hospital's departments. In this problem, the three objectives are the total cost of creating new beds, the number of nurses and doctors, and the optimal number of beds <ref type="bibr" target="#b10">[11]</ref>. The healthcare capacities assessment is a matter of great importance in the same vein. <ref type="bibr" target="#b22">Devapriya et al. (2015)</ref> proposed a discrete-event simulation model to determine the required bed capacity using forecasted patients' volume and LOS <ref type="bibr" target="#b22">[23]</ref>. Also, <ref type="bibr">Keegan et al. (2018)</ref> used an expanded HIPPOCRATES macrosimulation method to predict the number of beds needed for public and private hospitals in Ireland by 2030. Baseline year and projected demand and capacity profiles in this analysis are generated through the HIPPOCRATES macro-simulation model of demand and cost of health care developed by the ESRI.</p><p>The emergency department plays a vital role in the hospital because it is the first deal for patients. Therefore, the effective management of the emergency department is significant in improving the quality of service and treatment. Nas and Koyuncu (2019) used ten ML tools to predict the patients' arrival rates. They applied a simulation model to determine the required number of beds in the emergency department by minimizing the LOS in a case study in Turkey <ref type="bibr" target="#b23">[24]</ref>. <ref type="bibr" target="#b24">Kutafina et al. (2019)</ref> predicted hospital bed occupancy using recurrent neural networks based on 353520-time series records and four features from a hospital in Germany. The results show that the proposed ML model is a powerful tool for automatic planning and decision-making on existing bed capacity planning <ref type="bibr" target="#b24">[25]</ref>. <ref type="bibr" target="#b25">Zhu et al. (2020)</ref> developed three mathematical models considering the uncertainty of demand for inpatient beds and the number of periods <ref type="bibr" target="#b25">[26]</ref>. They solved and analyzed these models in a public hospital in China.</p><p>Predicting the required capacity of hospital wards during pandemics, such as Covid-19s, is essential for the hospital. <ref type="bibr" target="#b9">Deschepper et al. (2021)</ref> used an incremental Poisson model on the previous patients' statistics to establish a Mont-Carlo simulation model for a 10day prediction of needed beds in various wards of A hospital in Ghent. <ref type="bibr">Haghshenas et al. (2021)</ref> proposed a bi-objective mixed-integer optimization model for Cancer hospitals' location-allocation problem under bed capacity and efficiency considerations <ref type="bibr" target="#b26">[27]</ref>. They forecasted the cancer incidences in the provinces of Iran in 2040 using LR models to provide a plan for cancer hospitals established in each province in some predefined efficient bed capacities. Also, they applied this forecasting method to determine the demand parameter values in a single objective mathematical model for Cancer-curing supply chain planning [28]. The healthcare system of a country is very complex and vital, that is why <ref type="bibr" target="#b28">Kabir et al. (2021)</ref> used Recurrent Neural Network (RNN) to predict population growth and applied the Markov decision process to simulate the number of required beds by the next 30 years in a case study of Bangladesh <ref type="bibr" target="#b28">[29]</ref>. <ref type="bibr" target="#b8">Ordu et al. (2021)</ref> proposed a linear programming model for bed capacity and staff requirement planning in a case study in England. They also forecasted the demand for specialists with ML tools and simulated the patients' treatment pathway using a discrete-event simulation model.</p><p>It is crucial to determine the operating room bed capacity according to the critical condition of the patients. <ref type="bibr">Schiele et al. (2021)</ref> predicted the bed occupancy in the Intensive Care Unit (ICU) using an Artificial Neural Network (ANN) algorithm as an ML forecaster and 6000 patients' data from 2010 to 2016 in an ICU scheduling problem in Germany. High traffic of patients in hospitals' wards, in particular the emergency department, affects the capability to provide the optimal level of care. <ref type="bibr" target="#b18">Tello et al. (2022)</ref> predicted weekly hospital bed capacity using LR as a forecaster per cluster of beds/day. They applied the Kmeans clustering method in SVM as the classifier of beds/day factor in a case study in the USA <ref type="bibr" target="#b18">[19]</ref>. <ref type="bibr" target="#b7">Latruwe et al. (2023)</ref> proposed a simulation model called the ProMoBed, for inpatient hospitals' bed capacity forecasting. They used LOS, seasonality, and admission data to simulate a stochastic pattern of demand for beds in a case study in Belgium <ref type="bibr" target="#b7">[8]</ref>. Garcia-Vincuna et al. (2023) initially predicted the LOS using linear and non-linear programming and then simulated the bed prediction for the ICU department <ref type="bibr" target="#b29">[30]</ref>.</p><p>The Covid epidemic sent about 19 million people to hospitals worldwide and showed the importance of forecasting during epidemics. <ref type="bibr">Redondo et al. (2023)</ref> used a discrete simulation model to predict hospital discharges for Covid patients <ref type="bibr" target="#b30">[31]</ref>. <ref type="bibr" target="#b31">Bekker et al. (2023)</ref> proposed a linear programming model for predicting hospital beds in the short term. The model predicts admissions and uses a queue-based model to occupy beds, providing accurate results for three days <ref type="bibr" target="#b31">[32]</ref>. <ref type="bibr" target="#b32">Widyasari et al. (2023)</ref> predicted the bed capacity of Malahayati Hospital in Indonesia using SVM and linear programming <ref type="bibr" target="#b32">[33]</ref>. Covid has put a lot of pressure on healthcare resources worldwide, often challenging hospital capacity and stressing hospital staff, <ref type="bibr" target="#b33">Johnson et al. (2023)</ref> predicted hospital resources using time series. Results showed that statistical forecasting and ML methods can provide valuable predictions to help make resource planning decisions during epidemics <ref type="bibr" target="#b33">[34]</ref>.</p><p>The above-reviewed literature, summarized in Table <ref type="table" target="#tab_0">1</ref>, shows that the commonly used techniques in HBC forecasting have been simulation and programming models. To our best knowledge, only three researchers, including <ref type="bibr">Kutafina</ref>   <ref type="formula">2022</ref>), applied ML tools in the healthcare centers' bed capacity planning. These papers used time series data on occupied beds and forecast the required beds in the short-run future, and ignore the direct effects of LOS and NHP.</p><p>As illustrated in Table <ref type="table" target="#tab_0">1</ref>, this paper uses a wide variety of techniques from DA, ML, DL, and Statistics to investigate the nature of significant factors, such as patients' LOS, Patients' Age, and NHP, to discover their historical manner and provide valuable information to forecast HBC. In addition, conducting LOS classification to use in HBC forecasting is a unique attribute of this paper.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">A hybrid data-driven approach to HBC forecasting</head><p>In this section, the framework of the proposed hybrid data-driven approach to HBC forecasting is provided, and some classification and forecasting algorithms are opted according to the corresponding literature.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.">New framework for HBC forecasting</head><p>As mentioned in the previous sections, factors of LOS and NHP play the most significant role in the bed capacity forecasting problem. Therefore, conducting descriptive analyses on these factors and other affecting features, for example, patient's age and bed occupancy, provides great initial insights into the problem. Consequently, the LOS classification, NHP distribution across LOS classes, and NHP forecasting are the heart of the proposed bed capacity forecasting framework. The results of these analyses are applied in a simple assumption-free mathematical model to forecast the required beds in the future. In addition, patients' age analysis could provide beneficial insight into the scatter of NHP according to Age, particularly in hospitals without specialized wards for children. Fig. <ref type="figure" target="#fig_1">1</ref> represents the structure and steps of the proposed framework.</p><p>According to Fig. <ref type="figure" target="#fig_1">1</ref>, like all data-oriented analyses, data collection and pre-processing activities, such as data set cleaning and feature transformations, are the initial conventional steps. The application of DA techniques to the three major features, including patients' Age, NHP, and patients' LOS, can provide massive great information to use in managerial prescriptive notes providing, LOS classification, and NHP forecasting. Through data analysis, some statistical inferences, such as the Hypothesis tests, might be used to verify some descriptive findings. The results of NHP forecasting and LOS-based NHP data analysis are applied in a mathematical model to forecast the hospital bed capacity. There are several algorithms for LOS classification and NHP forecasting. The following sub-sections opt for a set of algorithms that seems much more appropriate according to the literature.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.">LOS classification algorithms</head><p>The LOS literature review showed that although there is a long list of research on patients' LOS forecasting, no history exists on the LOS classification <ref type="bibr" target="#b34">[35]</ref><ref type="bibr" target="#b35">[36]</ref><ref type="bibr" target="#b36">[37]</ref><ref type="bibr" target="#b37">[38]</ref>. But Patients' classification based on various features using BN, K-Nearest Neighbor (KNN), SVM, DT, ANN, AdaBoost (AB), LR, Random Forest (RF), Recency-Frequency-Monetary analysis (RFM), Gradient Boosting (GB), and Ensembles algorithms has been taken great attention, as illustrated in Table <ref type="table">2</ref>.</p><p>Mentioning Table <ref type="table">2</ref>, the five most popular ML algorithms, including BN, KNN, SVM, DT, and LR, are considered for LOS classification.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3.">NHP forecasting algorithms</head><p>Table <ref type="table" target="#tab_1">3</ref> shows the conventional ML and DL forecasters used in the number of patients forecasting. Considering Table <ref type="table" target="#tab_1">3</ref>, Time series methods are the most convenient forecaster on NHP. In addition, LR and Neural networks were the well-accurate forecasters in most literature. Therefore, SARIMA, SLR, and LSTM neural networks have opted for NHP forecasting.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Case study</head><p>Rouhani Hospital is a public hospital in Babol City of Mazandaran province located in the northern band of Iran. This hospital has 508 beds, nine wards, and 391 specialists. In this hospital, the Heart ward is the busiest ward possessing 30 beds in the main hall of the Heart ward and 15 beds in the Emergency section of Heart diseases.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.">Data set</head><p>The collected data set contains 51231 records between 2011 and 2018. Some features, including age and LOS, are considered to be used in the Heart ward's bed capacity forecasting problem. After removing the outliers and noisy data, 47605 records remained which 70% data are categorized as training data and others as test data.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.">Data analysis</head><p>The NHP in the Heard ward, patients' age distribution, and their LOS play significant roles in the required beds forecasting. In this section, some Data analysis techniques are applied to the NHP, LOS, and Age to provide initial insights on these significant factors affecting the number of required beds equal to 25. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Table 2</head><p>The popular ML algorithms for patients classification. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Research</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.1.">NHP descriptive analysis</head><p>Fig. <ref type="figure" target="#fig_3">2</ref> represents the daily NHP in the Heart ward. In this case study, some Heart patients might be hospitalized temporarily in the Emergency section of the Heart ward or other disease wards, waiting for the Heart ward beds evacuation. The reason is that NHP is over the existing bed capacity of the Heart ward on some days.</p><p>In Fig. <ref type="figure" target="#fig_3">2</ref>, some drastic fallings occur on NHP around the 19 March-4 April each year. Fig. <ref type="figure" target="#fig_4">3</ref> shows these considerable fluctuations in NHP in more detail from 2013 to 2018. All illustrated fluctuations in Fig. <ref type="figure" target="#fig_4">3</ref> occurred during the annual Nowruz holidays, 19 March-4 April, in Iran as the Persian new year ceremony. In this period, there is no accessibility to Heart specialists because all of them are on their private trips. Therefore, there is no new admittance during this period, and this cause to misuse of some beds and risks for patients. On the other hand, a considerable increase occurs in admittance before and after this holiday, especially from 5 April onwards. Three Hypothesis tests are performed on the mean of hospitalized patients during three 20day periods, as presented in Table <ref type="table" target="#tab_2">4</ref>, to investigate the significance of falling in admittance during this period.</p><p>The sample corresponding to each period is formed by pooling the patients' statistics from 2013 to 2018 to carry out the Hypothesis tests. Table <ref type="table" target="#tab_3">5</ref> depicts the outputs of the conducted test using the MINITAB 21.1.0.</p><p>The probability values from Table <ref type="table" target="#tab_3">5</ref> show considerable differences between the mean of patients' admittance during BNH and NH, like     </p><formula xml:id="formula_0">1 𝐻 0 ∶ 𝜇 𝐵𝑁𝐻 = 𝜇 𝑁𝐻 𝐻 1 ∶ 𝜇 𝐵𝑁𝐻 ≠ 𝜇 𝑁𝐻 120 0 2 𝐻 0 ∶ 𝜇 𝑃 𝑁𝐻 = 𝜇 𝑁𝐻 𝐻 1 ∶ 𝜇 𝑃 𝑁𝐻 ≠ 𝜇 𝑁𝐻 120 0 3 𝐻 0 ∶ 𝜇 𝐵𝑁𝐻 = 𝜇 𝑃 𝑁𝐻 𝐻 1 ∶ 𝜇 𝐵𝑁𝐻 ≠ 𝜇 0.175</formula><p>PNH and NH. Moreover, the p-value=0.175 shows no significant difference between the mean of patients' admittance along BNH and PNH according to corresponding collected data and conventional significance level 0.05. These results verify the conducted data-driven visual inferences from Fig. <ref type="figure" target="#fig_3">2</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.2.">Age-based NHP descriptive analysis</head><p>Fig. <ref type="figure" target="#fig_5">4</ref> represents that the NHP follows a bimodal pattern according to the patient's age. In addition, the most significant portion of NHP belongs to patients aged between 45 and 85. Using information represented in Fig. <ref type="figure" target="#fig_5">4</ref>, six classes of ages are considered, including (0,15], <ref type="bibr" target="#b14">(15,</ref><ref type="bibr" target="#b29">30]</ref>, <ref type="bibr" target="#b29">(30,</ref><ref type="bibr" target="#b44">45]</ref>, <ref type="bibr" target="#b44">(45,</ref><ref type="bibr" target="#b59">60]</ref>, <ref type="bibr" target="#b59">(60,</ref><ref type="bibr">85]</ref>, and (85,99], as depicted in Table <ref type="table" target="#tab_4">6</ref>.</p><p>Although Table <ref type="table" target="#tab_4">6</ref> shows that children's class only involves six percent of total NHP, its share is considerable enough to provide specialized proper room in the Heart ward or even a particular children's Heart ward regarding their special emotional considerations. Another interesting note in Fig. <ref type="figure" target="#fig_5">4</ref> is that the mean age of children hospitalized with Heart issues is about 7. By conducting some diagnostic analyses on the modal nature of children's NHP, the roots of this manner would be investigated and might be beneficial in children's Heart disease treatment management and even prevention in the future. Fig. <ref type="figure" target="#fig_6">5</ref> illustrates  the fact that the rate of admittance is increasing only among people aged between 30 and 60. Fig. <ref type="figure" target="#fig_6">5</ref> illustrates that the admittance of people of age class <ref type="bibr" target="#b29">(30,</ref><ref type="bibr" target="#b44">45</ref>] has taken more and more acceleration. In other words, Heart diseases are becoming more common over the past between younger individuals. This fact allocates more credit to promoting preventive actions on Heart disease in the public.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.3.">LOS descriptive analysis</head><p>Fig. <ref type="figure" target="#fig_7">6</ref> represents the patients' LOS distribution. In Fig. <ref type="figure" target="#fig_7">6</ref>, only a few LOSs are too long, and most seem to be less than ten days. This claim is verified in Figs. <ref type="figure">7 and 8</ref>, representing the scatter of NHP in terms of LOS.</p><p>Table <ref type="table" target="#tab_5">7</ref> represents the share of the first twenty values of LOS in terms of NHP to investigate the frequency of LOS values in detail.</p><p>Table <ref type="table" target="#tab_5">7</ref> shows that LOS=1 makes the role of the first to fourth deciles lonely as the first quartile, LOS=2 is the fifth and sixth deciles as the second quartile, LOS=4 is the third quartile, LOS=3 is the seventh decile, LOS=6 is the eighth decile, and LOS=11 is the ninth decile. Also, more than 95.5 percent of patients stay less than 20 days. This information helps to form appropriate classes of LOS.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.">LOS classification</head><p>Several sets of LOS classes are made, and their accuracy is examined using several classification tools coded using the Sklearn library of Python, as presented in Table <ref type="table">8</ref>. In Table <ref type="table">8</ref>, the classification results show that SVM provides the best accuracy and introduces the case of six classes of LOS as the best alternative. Table <ref type="table" target="#tab_6">9</ref> depicts the information on NHP and the time interval of LOS classes. Table <ref type="table" target="#tab_6">9</ref> illustrates only 6% of patients experienced LOS for more than 15 days, and most would stay in the Heart ward for only one day. In addition, Table <ref type="table" target="#tab_7">10</ref> presents detailed information on the NHP distribution in each Age class per LOS class.</p><p>In Table <ref type="table" target="#tab_7">10</ref>, the lowest proportion of NHP from the first class of LOS, LOS=1, comes from the eldest people's class which seems reasonable because of the more Heart risk and need for continual health monitoring in this class. But the following place is allocated to children means the admittance of this type of Heart patient tends to be longer over other Age classes. A more diagnostic analysis could provide helpful information to make better decisions on the specialized Heart beds for children because the children's class possesses the first rank in the proportion of NHP allocated to the long LOS class. This situation assigns crucial importance to establishing specialized children's Heart wards in the future.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.4.">NHP forecasting</head><p>Table <ref type="table" target="#tab_0">11</ref> summarizes the results of applying three opted forecasters in Section 3.3 using Python libraries.</p><p>As illustrated in Table <ref type="table" target="#tab_0">11</ref>, LR opted for forecasting NHP in the future due to providing the least error index. The mentioned hospital was the main center for COVID-19 patients' treatment in Babol City between 2019 and 2021, and hence, the daily NHP is forecasted for the five years from 2022 to 2026.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.5.">Heart ward bed capacity forecasting</head><p>According to Fig. <ref type="figure" target="#fig_1">1</ref>, the forecasted NHP and LOS-based distribution of NHP should be applied to forecast the Heart ward bed capacity in the future. The proportion of NHP in LOS classes, from Table <ref type="table" target="#tab_6">9</ref>, is applied to forecast the NHP belonging to each LOS class in the future. It is supposed that the expected nights/beds corresponding to LOS classes are equal to 1, 2, 3, 5, 11, and 22, respectively. Eq. ( <ref type="formula" target="#formula_1">1</ref>) uses the forecasted NHP of LOS classes to predict the required daily beds     between 2022 and 2026 (see Fig. <ref type="figure" target="#fig_9">9</ref>).</p><formula xml:id="formula_1">𝐻𝐵𝐶 𝑗 = ∑ 𝑖 𝑁𝐻𝑃 𝑖𝑗 + ∑ 𝑖≥2 𝑁𝐻𝑃 𝑖,𝑗−1 + ∑ 𝑖≥3 𝑁𝐻𝑃 𝑖,𝑗−2 + ∑ 𝑖≥4 𝑗−3 ∑ 𝑘=𝑗−4 𝑁𝐻𝑃 𝑖𝑘 + ∑ 𝑖≥5 𝑗−5 ∑ 𝑘=𝑗−10 𝑁𝐻𝑃 𝑖𝑘 + 𝑗−11 ∑ 𝑘=𝑗−20 𝑁𝐻𝑃 6,𝑘 𝑖 = 1, 2, … , 6; 𝑗 = 1, 2, … , 1825<label>(1)</label></formula><p>In Eq. ( <ref type="formula" target="#formula_1">1</ref>), i the index of LOS classes, and j the order of days between 2022 and 2027. Also, 𝑁𝐻𝑃 𝑖𝑗 represents the NHP belonging to the 𝑖th class of LOS that will be admitted in the Heart ward during day j, and 𝐻𝐵𝐶 𝑗 denotes the needed beds in day j. Fig. <ref type="figure" target="#fig_10">10</ref> illustrates the forecasted HBC in Heart ward from 1 January 2022 to 31 December 2026. Fig. <ref type="figure" target="#fig_10">10</ref> represents a drastic increase in the number of required beds because the older hospitalized patients are not considered and the calculation only is dependent on the forthcoming NHPs. In this Figure, the average needed bed capacity in future is forecasted at 120 beds which is much more than the existing 45 beds. Therefore, this hospital's administration should make strategic increase the bed capacity the Heart ward from beds to beds 2026.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.6.">Managerial insights</head><p>In section 4.3.1, the NHP descriptive showed a type of mismanagement in the use of existing bed capacity in the Heart ward during about 20 days per year related to the Persian new year holidays. Therefore, some managerial tasks and cultural efforts are needed to provide an equitable shift working for Heart specialists during the new year holidays avoiding empty beds. This could result in sustainable Heart bed capacity in terms of productivity and reliable treatment for high risks Heart patients. In addition, Tables <ref type="table" target="#tab_7">6 and  10</ref> showed that children are a considerable ratio of Heart patients, and a noticeable proportion of them require too long LOS. Therefore, establishing an appropriate specialized Heart room or Heart ward for children must be a significant goal of the hospital's authorities. Also, Fig. <ref type="figure" target="#fig_10">10</ref> represented the need for 117 beds in the Heart ward from 2022 upward. Providing proper to establish per specialized Heart bed requires considerable Hence, conducting financial analysis to estimate the needed resources such as money is inevitable, particularly in a developing country such as Iran with tremendous limits on monitorial resources.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Conclusions, limitations, and recommendations</head><p>This paper considered the hospital bed capacity forecasting problem and proposed a Data-driven methodology to avoid the limits and difficulties of using traditional programming or simulation models. A hybrid approach involving DA, ML, DL, and statistical inference was applied in a Heart ward bed capacity forecasting. Results showed the need for establishing more beds in the Heart ward from 26 to 137 in 2027. In addition, more considerations on the child Heart patients' treatment and the increasing trend of the occurring Heart diseases among younger people are recommended by results.</p><p>This paper only focused on HBC forecasting and paid no attention to other required resources such as Specialists, Nurses, Equipment, and Budget. Forecasting these significant factors could provide beneficial information for decision-makers. In addition, some other factors can affect the NHP of a hospital in the future, such as insurance service level, the accessibility to other hospitals, the service quality level, limits on the number of available corresponding specialists, the number of specialized equipment, the economic conditions, and the people's accessibility to periodic checkup. This needs to use multivariate time series data sets and multivariate ML tools in future works. Also, uncertainty is an inevitable fact in decision-making that could be mentioned in the future use of DA, ML, and DL for HBC forecasting.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Ethical statement</head><p>The Authors declare that no real clinical data is applied in this paper.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head></head><label></label><figDesc>et al. (2019), Schiele et al. (2021), and Tello et al. (</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. The schematic representation of the proposed hybrid data-driven HBC forecasting.</figDesc><graphic coords="4,125.73,56.05,351.65,342.01" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head></head><label></label><figDesc>Fathi et al. (2020) [42] ✓ Maniruzzaman et al (2020) [43] ✓ ✓ ✓ Rahman et al. (2020) [38] ✓ Badriyah et al. (2020)<ref type="bibr" target="#b43">[44]</ref> </figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. The historical daily NHP in the Heart ward.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. The details of significant decreases in NHP in March per year.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 4 .</head><label>4</label><figDesc>Fig. 4. The age-based distribution NHP.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 5 .</head><label>5</label><figDesc>Fig. 5. The NHP-share trend per Age class.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Fig. 6 .</head><label>6</label><figDesc>Fig. 6. The LOS distribution of Heart patients.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Fig. 7 .Fig. 8 .</head><label>78</label><figDesc>Fig. 7. The NHP with a LOS of less than 31 days.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Fig. 9 .</head><label>9</label><figDesc>Fig. 9. The forecasted daily NHP between 2022 and 2027.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head>Fig. 10 .</head><label>10</label><figDesc>Fig. 10. The forecasted HBC in Heart ward.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Hospital bed capacity forecasting literature.</figDesc><table><row><cell>Attribute</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Research</cell><cell>Programming</cell><cell>Simulation</cell><cell>Mathematical</cell><cell>Data</cell><cell>Machine</cell><cell>Deep</cell><cell>Statistical</cell><cell>LOS</cell></row><row><cell></cell><cell>model</cell><cell></cell><cell>model</cell><cell>analysis</cell><cell>learning</cell><cell>learning</cell><cell>inference</cell><cell>classification</cell></row><row><cell>Bachouch et al. (2012)</cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Ben Abdelaziz and</cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Masmoudi (2012)</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Devapriya et al. (2015)</cell><cell></cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Keegan et al. (2018)</cell><cell></cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Nas and Koyuncu</cell><cell></cell><cell>✓</cell><cell></cell><cell></cell><cell>✓</cell><cell></cell><cell></cell><cell></cell></row><row><cell>(2019)</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Kutafina et al. (2019)</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>✓</cell><cell></cell><cell></cell><cell></cell></row><row><cell>Zhu et al. (2020)</cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Deschepper et al.</cell><cell></cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>(2021)</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Haghshenas et al.</cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell>✓</cell><cell></cell><cell></cell><cell></cell></row><row><cell>(2021)</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Kabir et al. (2021)</cell><cell></cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell>✓</cell><cell></cell><cell></cell></row><row><cell>Ordu et al. (2021)</cell><cell>✓</cell><cell>✓</cell><cell></cell><cell></cell><cell>✓</cell><cell></cell><cell></cell><cell></cell></row><row><cell>Schiele et al. (2021)</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>✓</cell><cell></cell><cell></cell><cell></cell></row><row><cell>Tello et al. (2022)</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>✓</cell><cell></cell><cell></cell><cell></cell></row><row><cell>Latruwe et al. (2023)</cell><cell></cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Garcia-Vincuna et al.</cell><cell>✓</cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>(2023)</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Redondo et al. (2023)</cell><cell></cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Bekker et al. (2023)</cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Widyasari et al. (2023)</cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell>✓</cell><cell></cell><cell></cell><cell></cell></row><row><cell>Johnson et al. (2023)</cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>This paper</cell><cell></cell><cell></cell><cell>✓</cell><cell>✓</cell><cell>✓</cell><cell>✓</cell><cell>✓</cell><cell>✓</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 3</head><label>3</label><figDesc>The popular ML/DL algorithms for the number of patients forecasting.</figDesc><table><row><cell>Research</cell><cell>Forecasters</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>Time series</cell><cell>Neural networks</cell><cell>DT</cell><cell>Regression</cell><cell>GB</cell><cell>LR</cell><cell>SVM</cell><cell>RF</cell><cell>KNN</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>logistics</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Bergs et al. (2014) [50]</cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Mai et al. (2015) [51]</cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Ekström et al. (2015) [52]</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>✓</cell><cell></cell><cell></cell></row><row><cell>Luo et al. [53]</cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Byron et al. (2018) [54]</cell><cell></cell><cell></cell><cell>✓</cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Khalid et al. (2019) [55]</cell><cell>✓</cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Sahai al. (2020) [56]</cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Rustam et al. [57]</cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>✓</cell><cell></cell><cell></cell></row><row><cell>Agrawal et al. (2021) [58]</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Vollmer et al. (2021) [59]</cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell>✓</cell><cell>✓</cell><cell></cell><cell>✓</cell></row><row><cell>et al. (2021) [60]</cell><cell></cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>✓</cell></row><row><cell>Famiglini et al. (2022) [61]</cell><cell></cell><cell>✓</cell><cell>✓</cell><cell></cell><cell>✓</cell><cell></cell><cell>✓</cell><cell></cell></row><row><cell>et al. (2022) [62]</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>✓</cell><cell></cell><cell></cell><cell></cell></row><row><cell>Vieira et al. (2023) [63]</cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Alvarez-Chaves et al. (2023) [64]</cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell>✓</cell><cell></cell><cell></cell><cell></cell></row><row><cell>This paper</cell><cell>✓</cell><cell>✓</cell><cell></cell><cell></cell><cell></cell><cell>✓</cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 4</head><label>4</label><figDesc>The considered periods for testing the significance of NHP fluctuations.</figDesc><table><row><cell>No</cell><cell>Period</cell><cell>Abbreviation</cell><cell>Time duration</cell><cell>Mean of NHP</cell></row><row><cell>1</cell><cell>Before Nowruz holidays</cell><cell>BNH</cell><cell>23 February-14 March</cell><cell>𝜇 𝐵𝑁𝐻</cell></row><row><cell>2</cell><cell>Nowruz holidays</cell><cell>NH</cell><cell>15 March-4 April</cell><cell>𝜇 𝑁𝐻</cell></row><row><cell>3</cell><cell>Post Nowruz</cell><cell>PNH</cell><cell>5 April-23 April</cell><cell>𝜇 𝑃 𝑁𝐻</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 5</head><label>5</label><figDesc>The results of the hypothesis tests.</figDesc><table><row><cell>No</cell><cell>Hypothesis test</cell><cell>Sample size</cell><cell>P-Value</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 6</head><label>6</label><figDesc>The proportion of NHP in each age class.</figDesc><table><row><cell>No of Class</cell><cell>1</cell><cell>2</cell><cell>3</cell><cell>4</cell><cell>5</cell><cell>6</cell></row><row><cell>Range</cell><cell>0-15</cell><cell>15-30</cell><cell>30-45</cell><cell>45-60</cell><cell>60-85</cell><cell></cell></row><row><cell>NHP</cell><cell>2641</cell><cell>1617</cell><cell>3994</cell><cell>11745</cell><cell>24266</cell><cell>3342</cell></row><row><cell>Proportion</cell><cell>0/06</cell><cell>0/03</cell><cell>0/08</cell><cell>0/25</cell><cell>0/51</cell><cell></cell></row><row><cell>Cumulative</cell><cell>0/06</cell><cell>0/09</cell><cell>0/17</cell><cell>0/42</cell><cell>0/93</cell><cell>1</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 7</head><label>7</label><figDesc>The share each LOS in terms of NHP.</figDesc><table><row><cell></cell><cell>LOS</cell><cell>NHP</cell><cell cols="2">Proportion</cell><cell>Cumulative</cell><cell>LOS</cell><cell>NHP</cell><cell>Proportion</cell><cell>Cumulative</cell></row><row><cell></cell><cell>1</cell><cell>22787</cell><cell>0.478668</cell><cell></cell><cell>0.478668</cell><cell>11</cell><cell>539</cell><cell>0.011322</cell><cell>0.901754</cell></row><row><cell></cell><cell>2</cell><cell>6589</cell><cell>0.13841</cell><cell></cell><cell>0.617078</cell><cell>12</cell><cell>462</cell><cell>0.009705</cell><cell>0.911459</cell></row><row><cell></cell><cell>3</cell><cell>4187</cell><cell>0.087953</cell><cell></cell><cell>0.705031</cell><cell>13</cell><cell>400</cell><cell>0.008402</cell><cell>0.919861</cell></row><row><cell></cell><cell>4</cell><cell>2526</cell><cell>0.053062</cell><cell></cell><cell>0.758093</cell><cell>14</cell><cell>397</cell><cell>0.008339</cell><cell>0.928201</cell></row><row><cell></cell><cell>5</cell><cell></cell><cell>0.037013</cell><cell></cell><cell>0.795106</cell><cell>15</cell><cell>282</cell><cell>0.005924</cell><cell>0.934125</cell></row><row><cell></cell><cell>6</cell><cell>1319</cell><cell>0.027707</cell><cell></cell><cell>0.822813</cell><cell>16</cell><cell>232</cell><cell>0.004873</cell><cell>0.938998</cell></row><row><cell></cell><cell>7</cell><cell>1109</cell><cell>0.023296</cell><cell></cell><cell>0.846109</cell><cell>17</cell><cell>214</cell><cell>0.004495</cell></row><row><cell></cell><cell>8</cell><cell>805</cell><cell>0.01691</cell><cell></cell><cell>0.863019</cell><cell>18</cell><cell>219</cell><cell>0.948094</cell></row><row><cell></cell><cell>9</cell><cell>707</cell><cell></cell><cell></cell><cell>0.87787</cell><cell>19</cell><cell>194</cell><cell>0.952169</cell></row><row><cell></cell><cell>10</cell><cell>598</cell><cell>0.012562</cell><cell></cell><cell>0.890432</cell><cell></cell><cell>140</cell><cell>0.002941</cell><cell>0.95511</cell></row><row><cell>Table</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell cols="2">accuracy of LOS classifiers.</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Classifier</cell><cell cols="2">Number of classes</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>4</cell><cell>5</cell><cell>6</cell><cell>7</cell><cell>8</cell><cell></cell><cell></cell></row><row><cell>SVM</cell><cell></cell><cell>55%</cell><cell>71%</cell><cell>48%</cell><cell>51%</cell><cell></cell><cell></cell></row><row><cell>DT</cell><cell>64%</cell><cell>49%</cell><cell>69%</cell><cell>46%</cell><cell>49%</cell><cell></cell><cell></cell></row><row><cell>LR</cell><cell>52%</cell><cell>43%</cell><cell>48%</cell><cell>40%</cell><cell>42%</cell><cell></cell><cell></cell></row><row><cell>KNN</cell><cell>46%</cell><cell>43%</cell><cell>47%</cell><cell>42%</cell><cell>42%</cell><cell></cell><cell></cell></row><row><cell>BN</cell><cell>40%</cell><cell>36%</cell><cell>39%</cell><cell>35%</cell><cell>40%</cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6"><head>Table 9</head><label>9</label><figDesc>The proportion of NHP per LOS classes.</figDesc><table><row><cell>No</cell><cell>LOS range</cell><cell>NHP</cell><cell>Proportion</cell><cell>Cumulative</cell></row><row><cell>1</cell><cell>1</cell><cell>22787</cell><cell>0/48</cell><cell>0/48</cell></row><row><cell>2</cell><cell>2</cell><cell>6589</cell><cell>0/14</cell><cell>0/62</cell></row><row><cell>3</cell><cell>3</cell><cell>4187</cell><cell>0/09</cell><cell>0/71</cell></row><row><cell>4</cell><cell>[4,6]</cell><cell>5607</cell><cell>0/12</cell><cell>0/83</cell></row><row><cell>5</cell><cell>[7,15]</cell><cell>5299</cell><cell>0/11</cell><cell>0/94</cell></row><row><cell>6</cell><cell>[16,730]</cell><cell>3136</cell><cell>0/06</cell><cell>1</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7"><head>Table 10</head><label>10</label><figDesc>The NHP according to Age and LOS classes.</figDesc><table><row><cell>LOS range</cell><cell>Age range</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>(0,15]</cell><cell>(15,30]</cell><cell>(30,45]</cell><cell>(45,60]</cell><cell>(60,85]</cell><cell>(85,99]</cell></row><row><cell>1</cell><cell>891</cell><cell>765</cell><cell>2082</cell><cell>6841</cell><cell>11365</cell><cell>843</cell></row><row><cell></cell><cell></cell><cell>314</cell><cell>667</cell><cell>1551</cell><cell>3185</cell><cell>374</cell></row><row><cell>3</cell><cell>462</cell><cell>161</cell><cell>288</cell><cell></cell><cell>2134</cell><cell>406</cell></row><row><cell>[4,6]</cell><cell>209</cell><cell>133</cell><cell></cell><cell>1072</cell><cell></cell><cell>872</cell></row><row><cell>[7,15]</cell><cell></cell><cell>122</cell><cell>228</cell><cell>1097</cell><cell>3101</cell><cell>449</cell></row><row><cell>[16,730]</cell><cell>223</cell><cell>38</cell><cell>145</cell><cell>592</cell><cell>1895</cell><cell>243</cell></row><row><cell>Table 11</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell cols="2">The of NHP forecasting.</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell cols="2">Forecasting algorithm</cell><cell cols="2">library</cell><cell>Fitted model</cell><cell></cell><cell>RMSE</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>specifications</cell><cell></cell><cell></cell></row><row><cell>SARIMA</cell><cell></cell><cell>Statsmodels</cell><cell></cell><cell cols="2">𝑃 = 0, 𝐷 = 1, 𝑄 = 1</cell><cell>9.5</cell></row><row><cell>LR</cell><cell></cell><cell>Sklearn</cell><cell></cell><cell>Slope=-0.0027 ,</cell><cell></cell><cell>8.6</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>Intercept=16.71</cell><cell></cell><cell></cell></row><row><cell cols="2">LSTM Neural Network</cell><cell>Keras</cell><cell></cell><cell cols="2">Three hidden layers</cell><cell>9.1</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell cols="2">with 300, 150, and</cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>100 neurons,</cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell cols="2">respectively, and</cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>epoch=1000</cell><cell></cell><cell></cell></row></table></figure>
+		</body>
+		<back>
+
+			<div type="availability">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Data and code availability statement</head><p>The Authors would submit the related data set and codes whenever a request is received.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Data availability</head><p>Data will be made available on request.</p></div>
+			</div>
+
+
+			<div type="funding">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Funding statement</head><p>This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.</p></div>
+			</div>
+
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Declaration of competing interest</head><p>The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">A model to compare international hospital bed numbers, including a case study on the role of indigenous people on acute occupied bed demand in australian states</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">P</forename><surname>Jones</surname></persName>
+		</author>
+		<idno type="DOI">10.3390/ijerph191811239</idno>
+		<ptr target="http://dx.doi.org/10.3390/ijerph191811239" />
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Environ. Res. Public Health</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="issue">18</biblScope>
+			<biblScope unit="page">11239</biblScope>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Models and methods for determining the optimal number of beds in hospitals and regions: a systematic scoping review</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Ravaghi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Alidoost</surname></persName>
+		</author>
+		<idno type="DOI">10.1787/health_glance-2017-en</idno>
+		<ptr target="http://dx.doi.org/10.1787/health_glance-2017-en" />
+	</analytic>
+	<monogr>
+		<title level="j">BMC Health Serv. Res</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="1" to="13" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title level="m" type="main">A model to forecast regional demand for COVID-19 related hospital beds</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">O</forename><surname>Ferstad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Gu</surname></persName>
+		</author>
+		<idno type="DOI">10.1101/2020.03.26.20044842,med-archive</idno>
+		<ptr target="http://dx.doi.org/10.1101/2020.03.26.20044842,med-archive" />
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">How many medical beds does a country need?</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">P</forename><surname>Jones</surname></persName>
+		</author>
+		<idno type="DOI">10.12968/bjhc.2020.0028</idno>
+		<ptr target="http://dx.doi.org/10.12968/bjhc.2020.0028" />
+	</analytic>
+	<monogr>
+		<title level="j">Br. J. Health Care Manag</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="248" to="259" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">How many beds? Capacity implications of hospital care demand projections in the irish hospital system</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Keegan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Brick</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/hpm.2673</idno>
+		<ptr target="http://dx.doi.org/10.1002/hpm.2673" />
+	</analytic>
+	<monogr>
+		<title level="j">Br. J. Health Care Manag</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="e569" to="e582" />
+			<date type="published" when="2015">2015-2030. 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title level="m" type="main">Reducing Hospital Beds: What are the Lessons To Be Learned?</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mckee</surname></persName>
+		</author>
+		<ptr target="https://apps.who.int/iris/handle/10665/107615" />
+		<imprint>
+			<date type="published" when="2004">2004</date>
+			<publisher>W. H. Organization</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">How many hospital beds?</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">V</forename><surname>Green</surname></persName>
+		</author>
+		<idno type="DOI">10.5034/inquiryjrnl_39.4.400</idno>
+		<ptr target="http://dx.doi.org/10.5034/inquiryjrnl_39.4.400" />
+	</analytic>
+	<monogr>
+		<title level="j">Inq. J. Health Care Org. Pro. Fin</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="400" to="412" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">A long-term forecasting and simulation model for strategic planning of hospital bed capacity</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Latruwe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Van Der Wee</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.orhc.2022.100375</idno>
+		<ptr target="http://dx.doi.org/10.1016/j.orhc.2022.100375" />
+	</analytic>
+	<monogr>
+		<title level="j">Oper. Res. Health Care</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page">100375</biblScope>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">A novel healthcare resource allocation decision support tool: A forecasting-simulation-optimization approach</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ordu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Demir</surname></persName>
+		</author>
+		<idno type="DOI">10.1080/01605682.2019.1700186</idno>
+		<ptr target="http://dx.doi.org/10.1080/01605682.2019.1700186" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Oper. Res. Soc</title>
+		<imprint>
+			<biblScope unit="volume">72</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="485" to="500" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Prediction of hospital bed capacity during the COVID-19 pandemic</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Deschepper</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Eeckloo</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s12913-021-06492-3</idno>
+		<ptr target="http://dx.doi.org/10.1186/s12913-021-06492-3" />
+	</analytic>
+	<monogr>
+		<title level="j">BMC Health Serv. Res</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="10" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">A multiobjective stochastic program for hospital bed planning</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Ben Abdelaziz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Masmoudi</surname></persName>
+		</author>
+		<idno type="DOI">10.1057/jors.2011.39</idno>
+		<ptr target="http://dx.doi.org/10.1057/jors.2011.39" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Oper. Res. Soc</title>
+		<imprint>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="530" to="538" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Artificial intelligence in business: State of the art and future research agenda</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M C</forename><surname>Loureiro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Guerreiro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Tussyadiah</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jbusres.2020.11.001</idno>
+		<ptr target="http://dx.doi.org/10.1016/j.jbusres.2020.11.001" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Bus. Res</title>
+		<imprint>
+			<biblScope unit="volume">129</biblScope>
+			<biblScope unit="page" from="911" to="926" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><surname>Akerkar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Artificial Intelligence for Business</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<publisher>Springer</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">R</forename><surname>Paczkowski</surname></persName>
+		</author>
+		<title level="m">Business Analytics: Data Science for Business Problems</title>
+				<imprint>
+			<publisher>Springer Nature</publisher>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Data analytics in pharmaceutical supply chains: state of the art, opportunities, and challenges</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Nguyen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lamouri</surname></persName>
+		</author>
+		<idno type="DOI">10.1080/00207543.2021.1950937</idno>
+		<ptr target="http://dx.doi.org/10.1080/00207543.2021.1950937" />
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Prod. Res</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="issue">22</biblScope>
+			<biblScope unit="page" from="6888" to="6907" />
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<title level="m" type="main">The Health Care Data Guide: Learning from Data for Improvement</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">P</forename><surname>Provost</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Murray</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+			<publisher>John Wiley &amp; Sons</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Utilization of artificial intelligence in disease prevention: Diagnosis, treatment, and implications for the healthcare workforce</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">U D</forename><surname>Wani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">A</forename><surname>Khan</surname></persName>
+		</author>
+		<idno type="DOI">10.3390/healthcare10040608</idno>
+		<ptr target="http://dx.doi.org/10.3390/healthcare10040608" />
+	</analytic>
+	<monogr>
+		<title level="j">Healthcare</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page">608</biblScope>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<author>
+			<persName><forename type="first">K</forename><surname>Santosh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Gaur</surname></persName>
+		</author>
+		<title level="m">Artificial Intelligence and Machine Learning in Public Healthcare: Opportunities and Societal Impact</title>
+				<imprint>
+			<publisher>Springer Nature</publisher>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Machine learning based forecast for the prediction of inpatient bed demand</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Tello</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">S</forename><surname>Reich</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s12911-022-01787-9</idno>
+		<ptr target="http://dx.doi.org/10.1186/s12911-022-01787-9" />
+	</analytic>
+	<monogr>
+		<title level="j">BMC Medical Inform. Decis. Mak</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="13" />
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Predicting intensive care unit bed occupancy for integrated operating room scheduling via neural networks</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Schiele</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Koperna</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">O</forename><surname>Brunner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nav. Res. Logist</title>
+		<imprint>
+			<biblScope unit="volume">68</biblScope>
+			<biblScope unit="issue">1</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Insights from a machine learning model for predicting the hospital length of stay (LOS) at the time of admission</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Turgeman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>May</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Sciulli</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.eswa.2017.02.023</idno>
+		<ptr target="http://dx.doi.org/10.1016/j.eswa.2017.02.023" />
+	</analytic>
+	<monogr>
+		<title level="j">Expert Syst. Appl</title>
+		<imprint>
+			<biblScope unit="volume">78</biblScope>
+			<biblScope unit="page" from="376" to="385" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">An integer linear model for hospital bed planning</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">B</forename><surname>Bachouch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Guinet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hajri-Gabouj</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ijpe.2012.07.023</idno>
+		<ptr target="http://dx.doi.org/10.1016/j.ijpe.2012.07.023" />
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Prod. Econ</title>
+		<imprint>
+			<biblScope unit="volume">140</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="833" to="843" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Stratbam: a discrete-event simulation model to support strategic hospital bed capacity decisions</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Devapriya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">T B</forename><surname>Strömblad</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s10916-015-0325-0</idno>
+		<ptr target="http://dx.doi.org/10.1007/s10916-015-0325-0" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Med. Syst</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="1" to="13" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Emergency department capacity planning: a recurrent neural network and simulation approach</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Nas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Koyuncu</surname></persName>
+		</author>
+		<idno type="DOI">10.1155/2019/4359719</idno>
+		<ptr target="http://dx.doi.org/10.1155/2019/4359719" />
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Math. Methods Med</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<author>
+			<persName><forename type="first">E</forename><surname>Kutafina</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Bechtold</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s12911-019-0776-1</idno>
+		<ptr target="http://dx.doi.org/10.1186/s12911-019-0776-1" />
+	</analytic>
+	<monogr>
+		<title level="m">Recursive neural networks in hospital occupancy forecasting</title>
+				<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="1" to="10" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Data-driven models for capacity inpatient beds in a Chinese public hospital</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Liao</surname></persName>
+		</author>
+		<idno type="DOI">10.1155/2020/8740457</idno>
+		<ptr target="http://dx.doi.org/10.1155/2020/8740457" />
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Math. Med</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">A bi-objective model for cancer hospitals&apos; location and cancer patients&apos; allocation in, Iran</title>
+		<author>
+			<persName><forename type="first">Nemati</forename><surname>Haghshenas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Res</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">4</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Cancer-curing supply chain planning with regard to hospital bed-capacity efficiency: a plan for Iran in 2040</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Haghshenas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Nemati</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Asadi-Gangraj</surname></persName>
+		</author>
+		<idno>IJSOM.2023.131495</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Serv. Oper. Manag</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="170" to="186" />
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<monogr>
+		<title level="m" type="main">Use of machine learning for long term planning and cost minimization in healthcare management</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">B</forename><surname>Kabir</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Shuvo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">U</forename><surname>Ahmed</surname></persName>
+		</author>
+		<idno type="DOI">10.1101/2021.10.06.21264654,med-archive</idno>
+		<ptr target="http://dx.doi.org/10.1101/2021.10.06.21264654,med-archive" />
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Estimation of patient flow in hospitals using up-to-date data. Application to bed demand prediction during pandemic waves</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Garcia-Vicuña</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>López-Cheda</surname></persName>
+		</author>
+		<idno type="DOI">10.1371/journal.pone.0282331</idno>
+		<ptr target="http://dx.doi.org/10.1371/journal.pone.0282331" />
+	</analytic>
+	<monogr>
+		<title level="j">PLoS One</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page">e0282331</biblScope>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<monogr>
+		<title level="m" type="main">A simulation model for predicting hospital occupancy for Covid-19 using archetype analysis</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Redondo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Nicoletta</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.health.2023.100197</idno>
+		<ptr target="http://dx.doi.org/10.1016/j.health.2023.100197" />
+		<imprint/>
+	</monogr>
+	<note>HealthCare Anal. 3 (2023) 100197</note>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Modeling COVID-19 hospital admissions and occupancy in the netherlands</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Bekker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Broek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Koole</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ejor.2021.12.044</idno>
+		<ptr target="http://dx.doi.org/10.1016/j.ejor.2021.12.044" />
+	</analytic>
+	<monogr>
+		<title level="j">European J. Oper. Res</title>
+		<imprint>
+			<biblScope unit="volume">304</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="207" to="218" />
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">An optimization model for hospital emergency room based on patient growth and capacity management</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Widyasari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Cipta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Nasution</surname></persName>
+		</author>
+		<idno type="DOI">10.33395/sinkron.v8i1.11890</idno>
+		<ptr target="http://dx.doi.org/10.33395/sinkron.v8i1.11890" />
+	</analytic>
+	<monogr>
+		<title level="j">Sinkron: J. Dan Penel. Tekn. Inf</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="188" to="194" />
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Forecasting ward-level bed requirements to aid pandemic resource planning: Lessons learned and future directions</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Johnson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Naik</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s10729-023-09639-2</idno>
+		<ptr target="http://dx.doi.org/10.1007/s10729-023-09639-2" />
+	</analytic>
+	<monogr>
+		<title level="j">Health Care Manag. Sci</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="24" />
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Hospital patients&apos; length of stay prediction: A federated learning approach</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">M</forename><surname>Rahman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Kundu</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s10729-023-09639-2</idno>
+		<ptr target="http://dx.doi.org/10.1007/s10729-023-09639-2" />
+	</analytic>
+	<monogr>
+		<title level="j">J. King Saud Univ. Comput. Inf. Sci</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="7874" to="7884" />
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">State of asthma-related hospital admissions in New Zealand and predicting length of stay using machine learning</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">K D</forename><surname>Jayamini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Mirza</surname></persName>
+		</author>
+		<idno type="DOI">10.3390/app12199890</idno>
+		<ptr target="http://dx.doi.org/10.3390/app12199890" />
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Sci</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="issue">19</biblScope>
+			<biblScope unit="page">9890</biblScope>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">A machine learning algorithm predicts duration of hospitalization in COVID-19 patients</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Ebinger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Wells</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ibmed.2021.100035</idno>
+		<ptr target="http://dx.doi.org/10.1016/j.ibmed.2021.100035" />
+	</analytic>
+	<monogr>
+		<title level="j">Intell. Based. Med</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page">100035</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Using data mining to predict emergency department length of stay greater than 4 hours: Derivation and single-site validation of a decision tree algorithm</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Rahman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Honan</surname></persName>
+		</author>
+		<idno type="DOI">10.1111/1742-6723.13421</idno>
+		<ptr target="http://dx.doi.org/10.1111/1742-6723.13421" />
+	</analytic>
+	<monogr>
+		<title level="j">Emerg. Med. Australas</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="416" to="421" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">A data mining approach for modeling churn behavior via RFM model in specialized clinics case study: A public sector hospital in tehran</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mohammadzadeh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><forename type="middle">Z</forename><surname>Hoseini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Derafshi</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.procs.2017.11.206</idno>
+		<ptr target="http://dx.doi.org/10.1016/j.procs.2017.11.206" />
+	</analytic>
+	<monogr>
+		<title level="j">Procedia Comput. Sci</title>
+		<imprint>
+			<biblScope unit="volume">120</biblScope>
+			<biblScope unit="page" from="23" to="30" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Use of data mining techniques to classify length of stay of emergency department patients</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Sariyer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">Ö</forename><surname>Taşar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Cepe</surname></persName>
+		</author>
+		<idno type="DOI">10.1515/bams-2018-0044</idno>
+		<ptr target="http://dx.doi.org/10.1515/bams-2018-0044" />
+	</analytic>
+	<monogr>
+		<title level="j">Algorithms Med-Syst</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="2019">2019. 20180044</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Classification of patients with breast cancer using neighbourhood component analysis and supervised machine learning techniques</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Laghmati</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Cherradi</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/CommNet49926.2020.9199633</idno>
+		<ptr target="http://dx.doi.org/10.1109/CommNet49926.2020.9199633" />
+	</analytic>
+	<monogr>
+		<title level="j">Int. Con. Com. Tech. (CommNet)</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="6" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">A machine learning approach based on SVM for classification of liver diseases</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Fathi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Nemati</surname></persName>
+		</author>
+		<idno type="DOI">10.4015/S1016237220500180</idno>
+		<ptr target="http://dx.doi.org/10.4015/S1016237220500180" />
+	</analytic>
+	<monogr>
+		<title level="j">Biomed. Eng. -Appl</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page">2050018</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Classification and prediction of diabetes disease using machine learning paradigm</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Maniruzzaman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rahman</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s13755-019-0095-z</idno>
+		<ptr target="http://dx.doi.org/10.1007/s13755-019-0095-z" />
+	</analytic>
+	<monogr>
+		<title level="j">Health Inf. Sci. Syst</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="14" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Machine learning algorithm for stroke disease classification</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Badriyah</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Sakinah</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ICECCE49384.2020.9179307</idno>
+		<ptr target="http://dx.doi.org/10.1109/ICECCE49384.2020.9179307" />
+	</analytic>
+	<monogr>
+		<title level="j">Int. Con. Elec. Comn. Com. Eng. (ICECCE)</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="5" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Breast cancer type classification using machine learning</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Hicks</surname></persName>
+		</author>
+		<idno type="DOI">10.3390/s22134968</idno>
+		<ptr target="http://dx.doi.org/10.3390/s22134968" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Pers. Med</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page">61</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Predicting patient length of stay in Australian emergency departments using data mining</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">G</forename><surname>Gurazada</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Gao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sensors</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">13</biblScope>
+			<biblScope unit="page">4968</biblScope>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Machine learning model for predicting the length of stay in the intensive care unit for Covid-19 patients in the eastern province of Saudi Arabia</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Alabbad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Almuhaideb</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.imu.2022.100937</idno>
+		<ptr target="http://dx.doi.org/10.1016/j.imu.2022.100937" />
+	</analytic>
+	<monogr>
+		<title level="j">Inform. Med. Unlocked</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="page">100937</biblScope>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<monogr>
+		<title level="m" type="main">A systematic review on surface electromyography-based classification system for identifying hand and finger movements, Healthcare Anal</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Sultana</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Ahmed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Alam</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.health.2022.100126</idno>
+		<ptr target="http://dx.doi.org/10.1016/j.health.2022.100126" />
+		<imprint>
+			<date type="published" when="2022">2022</date>
+			<biblScope unit="page">100126</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Prediction of chronic liver disease patients using integrated projection based statistical feature extraction with machine learning algorithms</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Amin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Yasmin</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.imu.2022.101155</idno>
+		<ptr target="http://dx.doi.org/10.1016/j.imu.2022.101155" />
+	</analytic>
+	<monogr>
+		<title level="j">Inform. Med. Unlocked</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page">101155</biblScope>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Knowing.what.to. expect, Forecasting monthly emergency department visits: A time-series analysis</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Bergs</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Heerinckx</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Verelst</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ienj.2013.08.001</idno>
+		<ptr target="http://dx.doi.org/10.1016/j.ienj.2013.08.001" />
+	</analytic>
+	<monogr>
+		<title level="j">Int. Emerg. Nurs</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="112" to="115" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Predicting the number of emergency department presentations in western Australia: A population-based time series analysis</title>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Mai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Aboagye-Sarfo</surname></persName>
+		</author>
+		<idno type="DOI">10.1111/1742-6723.12344</idno>
+		<ptr target="http://dx.doi.org/10.1111/1742-6723.12344" />
+	</analytic>
+	<monogr>
+		<title level="j">Emerg. Med. Australas</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="16" to="21" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Forecasting emergency department visits using internet data</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ekström</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Kurland</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.annemergmed.2014.10.008</idno>
+		<ptr target="http://dx.doi.org/10.1016/j.annemergmed.2014.10.008" />
+	</analytic>
+	<monogr>
+		<title level="j">Ann. Emerg. Med</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="436" to="442" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Hospital daily outpatient visits forecasting using a combinatorial model based on ARIMA and SES models</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Luo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Luo</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s12913-017-2407-9</idno>
+		<ptr target="http://dx.doi.org/10.1186/s12913-017-2407-9" />
+	</analytic>
+	<monogr>
+		<title level="j">BMC Health. Serv. Res</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="13" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Using data mining to predict hospital admissions from the emergency department</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Graham</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Bond</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ACCESS.2018.2808843</idno>
+		<ptr target="http://dx.doi.org/10.1109/ACCESS.2018.2808843" />
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="10458" to="10469" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">Forecasting of weekly patient visits to emergency department: real case study</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Khaldi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">El</forename><surname>Afia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Chiheb</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.procs.2019.01.026</idno>
+		<ptr target="http://dx.doi.org/10.1016/j.procs.2019.01.026" />
+	</analytic>
+	<monogr>
+		<title level="j">Proc. comput. sci</title>
+		<imprint>
+			<biblScope unit="volume">148</biblScope>
+			<biblScope unit="page" from="532" to="541" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">ARIMA modelling and forecasting of COVID-19 in top five affected countries</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Sahai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Rath</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.dsx.2020.07.042</idno>
+		<ptr target="http://dx.doi.org/10.1016/j.dsx.2020.07.042" />
+	</analytic>
+	<monogr>
+		<title level="j">Diabetes Metab. Syndr</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="1419" to="1427" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">COVID-19 future forecasting using supervised machine learning models</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Rustam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Reshi</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ACCESS.2020.2997311</idno>
+		<ptr target="http://dx.doi.org/10.1109/ACCESS.2020.2997311" />
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="101489" to="101499" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">FOCOMO: Forecasting and monitoring the worldwide spread of COVID-19 using machine learning methods</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Agrawal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Madaan</surname></persName>
+		</author>
+		<idno type="DOI">10.1080/09720502.2021.1885812</idno>
+		<ptr target="http://dx.doi.org/10.1080/09720502.2021.1885812" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Interdiscip. Math</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="443" to="466" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">A unified machine learning approach to time series forecasting applied to demand at emergency departments</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A C</forename><surname>Vollmer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Glampson</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s12873-020-00395-y</idno>
+		<ptr target="http://dx.doi.org/10.1186/s12873-020-00395-y" />
+	</analytic>
+	<monogr>
+		<title level="j">BMC Emerg. Med</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="14" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">Performance evaluation of emergency department patient arrivals forecasting models by including meteorological and calendar information: A comparative study</title>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">K</forename><surname>Sudarshan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Brabrand</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.compbiomed.2021.104541</idno>
+		<ptr target="http://dx.doi.org/10.1016/j.compbiomed.2021.104541" />
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Biol. Med</title>
+		<imprint>
+			<biblScope unit="volume">135</biblScope>
+			<biblScope unit="page">104541</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">A robust and parsimonious machine learning method to predict ICU admission of COVID-19 patients</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Famiglini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Campagner</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.compbiomed.2021.104541</idno>
+		<ptr target="http://dx.doi.org/10.1016/j.compbiomed.2021.104541" />
+	</analytic>
+	<monogr>
+		<title level="j">Med. Biol. Eng. Comput</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="13" />
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">Forecasting and explaining emergency department visits in a public hospital</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Petsis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karamanou</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s10844-022-00716-6</idno>
+		<ptr target="http://dx.doi.org/10.1007/s10844-022-00716-6" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Intell. Inf. Syst</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="22" />
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title level="a" type="main">Forecasting daily admissions to an emergency department considering single and multiple seasonal patterns</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Vieira</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Sousa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Dória-Nóbrega</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s10844-022-00716-6</idno>
+		<ptr target="http://dx.doi.org/10.1007/s10844-022-00716-6" />
+	</analytic>
+	<monogr>
+		<title level="j">Healthcare Anal</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page">100146</biblScope>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">Machine learning methods for predicting the admissions and hospitalisations in the emergency department of a civil and military hospital</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Álvarez-Chaves</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Muñoz</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s10844-023-00790-4</idno>
+		<ptr target="http://dx.doi.org/10.1007/s10844-023-00790-4" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Intell. Inf. Syst</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">20</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>
