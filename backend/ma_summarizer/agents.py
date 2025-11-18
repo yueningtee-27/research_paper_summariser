@@ -127,21 +127,53 @@ class SummaryAggregatorAgent:
     def __init__(self, llm_model: str = "gpt-4o-mini", temperature: float = 0.05):
         self.llm = ChatOpenAI(model=llm_model, temperature=temperature)
         self.prompt_template = PromptTemplate.from_template("""
-You are an expert AI research assistant. Your task is to combine the following individual section summaries into one cohesive and well-structured academic summary of the research paper.
+            You are an expert machine learning research assistant. 
 
-Guidelines:
-- Reorganize and merge overlapping or overly detailed sections as needed.
-- Choose the most logical and meaningful section headings yourself (e.g., Introduction, Methods, Results, Discussion, Conclusion), based on content.
-- Ensure smooth transitions and consistent academic tone throughout.
-- Preserve key technical details, results, and findings from the input summaries.
-- Do not add information that is not supported by the summaries.
 
-Input Section Summaries:
-{sections_text}
+            Here is the section summaries from the research paper.
 
-Output:
-A coherent and complete academic-style summary written in paragraphs with appropriate section headings.
-""")
+            {sections_text}
+
+            Your task:
+                Utilise the section summaries to produce a highly detailed ML-focused technical summary. Extract every available detail about:
+                - model architecture
+                - input/output modalities
+                - data preprocessing and feature engineering
+                - training setup (optimizers, loss functions, learning rate schedules)
+                - hyperparameters
+                - experiments and ablations
+                - evaluation metrics
+                - datasets used and how they were constructed
+                - results and comparisons with baselines
+                - limitations and implications
+
+
+            Format your response strictly in JSON following the template below:
+
+            {{
+                "name_of_research_paper": "YoloV5",
+                "objective": "... let the machine see light ...",
+                "models": [
+                    {{
+                        "YoloV5": {{
+                            "name": "YoloV5",
+                            "input": "image...",
+                            "output": "metadata...",
+                            "machine_learning_category": "object detection",
+                            "data
+                            "data_engineering": "...",
+                            "feature_engineering": "...",
+                            "model_training": "...",
+                            "model_evaluation": "...",
+                            "model_results": "...",
+                            "limitations_and_implications": "..."
+                        }}
+                    }}
+                ],
+                "key_findings": "..."
+            }}
+            """
+)
         self.parser = StrOutputParser()
 
     def combine(self, section_summaries: list[dict]) -> str:

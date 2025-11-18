@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 import tempfile, shutil, os, time
 from summarizer import extract_pdf_text, summarize_paper_text
-from qa import answer_question
+from qa import  create_vectorstore_from_pdf, answer_question_with_rag
 from ma_summarizer.agents import GrobidSectionAgent, SectionSummaryAgent, SummaryAggregatorAgent, summarize_sections_parallel, SummaryHighlighterAgent
 from ma_summarizer.highlight_agent import HighlightAgent
 app = FastAPI(title="PDF Summarizer API")
@@ -16,10 +16,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
+def save_temp_pdf(upload_file: UploadFile) -> str:
+    """Save an uploaded PDF to a temp file and return the file path."""
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp:
+        shutil.copyfileobj(upload_file.file, tmp)
+        return tmp.name
 
 # test solution: store uplaoded paper text in memory 
 DOCUMENT_STORE = {}
+vectorstores = {}
 
 @app.post("/summarize")
 async def summarize_api(pdf: UploadFile = File(...), summary_type: str = Form("detailed")):
@@ -27,9 +32,7 @@ async def summarize_api(pdf: UploadFile = File(...), summary_type: str = Form("d
     print("\n[🟢] Received request")
     print(f"Filename to store in DOCUMENT_STORE as: {pdf.filename}")
 
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp:
-        shutil.copyfileobj(pdf.file, tmp)
-        pdf_path = tmp.name
+    pdf_path = save_temp_pdf(pdf)
     print(f"[📄] Saved PDF temporarily: {pdf_path}")
 
     try:
@@ -66,17 +69,27 @@ async def summarize_api(pdf: UploadFile = File(...), summary_type: str = Form("d
         os.remove(pdf_path)
         print(f"[🧹] Temporary file deleted: {pdf_path}")
 
+@app.post("/upload_pdf_for_qa")
+async def upload_pdf_for_qa(file: UploadFile = File(...), paper_id: str = Form(...)):
+    tmp_path = save_temp_pdf(file)
+
+    # Create vectorstore
+    vectorstore = create_vectorstore_from_pdf(tmp_path)
+    vectorstores[paper_id] = vectorstore
+
+    return {"status": "ok", "paper_id": paper_id, "chunks": len(vectorstore.index_to_docstore_id)}
 
 @app.post("/ask")
-async def ask_question(filename: str = Form(...), question: str = Form(...)):
+async def ask_question(session_id: str = Form(...), paper_id: str = Form(...), question: str = Form(...)):
+    if not question.strip(): 
+        return JSONResponse({"error": "Question cannot be empty"}, status_code = 400)
     """Answer a question about a previously uploaded paper."""
-    if filename not in DOCUMENT_STORE: 
-        return JSONResponse({"error": "File not found. Upload and summarize first"}, status_code = 400)
+    if paper_id not in vectorstores:
+        return JSONResponse(content={"error": "Paper not found / RAG not ready"}, status_code=404)
 
-    context_text = DOCUMENT_STORE[filename]
-    answer = answer_question(context_text, question)
-    return JSONResponse({"answer": answer})
-
+    vectorstore = vectorstores[paper_id]
+    answer = answer_question_with_rag(session_id, vectorstore, question)
+    return {"answer": answer}
 
 grobid_agent = GrobidSectionAgent()
 section_agent = SectionSummaryAgent()

@@ -9,7 +9,8 @@ export default function PaperSummarizer({ setFileUrl, setFilename: setFilenamePr
   const [loading, setLoading] = useState(false);
   const [progress, setProgress] = useState(""); // new progress log text
 
-  const [question, setQuestion] = useState("");
+  const [conversation, setConversation] = useState([]);
+  const [currentQuestion, setCurrentQuestion] = useState("");
   const [answer, setAnswer] = useState("");
 
   // Create blob URL when file is selected
@@ -30,31 +31,31 @@ export default function PaperSummarizer({ setFileUrl, setFilename: setFilenamePr
 
   const handleSubmit = async () => {
     if (!file) return alert("Please upload a PDF");
-
+  
     const formData = new FormData();
     formData.append("pdf", file);
     formData.append("summary_type", summaryType);
-
+  
     console.log("[1] Uploading PDF:", file.name);
     setProgress("Uploading PDF...");
     setLoading(true);
     setSummary(""); // clear old summary
-
+  
     try {
       console.log("[2] Sending request to backend...");
       setProgress("Sending request to summarizer backend...");
-
+  
       const res = await fetch("http://localhost:5000/summarize", {
         method: "POST",
         body: formData,
       });
-
+  
       console.log("[3] Response received, parsing JSON...");
       setProgress("Processing response...");
-
+  
       const data = await res.json();
       console.log("[4] Summary received from backend:", data);
-
+  
       setSummary(data.summary || "⚠️ Error: No summary returned.");
       setFilename(data.filename);
       if (setFilenameProp && data.filename) {
@@ -62,6 +63,29 @@ export default function PaperSummarizer({ setFileUrl, setFilename: setFilenamePr
       }
       console.log("Setting file name: ", data.filename);
       setProgress("Summary generation complete ✅");
+  
+      // -----------------------------
+      // RAG vectorstore creation
+      // -----------------------------
+      const paperId = data.filename;
+      const formDataQA = new FormData();
+      formDataQA.append("file", file);
+      formDataQA.append("paper_id", paperId)
+  
+      fetch("http://localhost:5000/upload_pdf_for_qa", {
+        method: "POST",
+        body: formDataQA
+      })
+      .then(resQA => resQA.json())
+      .then(dataQA => {
+        console.log("[RAG] PDF ready for Q&A:", dataQA);
+        setProgress("RAG vectorstore ready. You can now ask questions.");
+      })
+      .catch(err => {
+        console.error("[RAG] Error preparing PDF for Q&A:", err);
+        setProgress("⚠️ Failed to prepare Q&A vectorstore.");
+      });
+  
     } catch (error) {
       console.error("❌ Error during summarization:", error);
       setSummary("⚠️ Failed to generate summary. Check backend logs.");
@@ -73,20 +97,48 @@ export default function PaperSummarizer({ setFileUrl, setFilename: setFilenamePr
   };
 
   const handleAsk = async () => {
-    if (!question) return;
-    setAnswer("Thinking...");
-    const formData = new FormData();
-    formData.append("filename", filename);
-    console.log("Filename is:", filename);
-    formData.append("question", question);
-
-    const res = await fetch("http://localhost:5000/ask", {
-      method: "POST",
-      body: formData,
-    });
-    const data = await res.json();
-    setAnswer(data.answer || "Error generating answer");
+    if (!currentQuestion) return;
+    if (!filename) return alert("Please upload PDF first");
+  
+    const questionToSend = currentQuestion; // store question in local variable
+    setCurrentQuestion("");
+  
+    // Add user message to conversation
+    setConversation(prev => [...prev, { role: "user", content: questionToSend }]);
+  
+    // Show a "thinking" message from assistant
+    setConversation(prev => [...prev, { role: "assistant", content: "Thinking..." }]);
+  
+    const form = new FormData()
+    form.append("session_id", "user123");
+    form.append("paper_id", filename);
+    form.append("question", questionToSend);
+  
+    try {
+      const res = await fetch("http://localhost:5000/ask", {
+        method: "POST",
+        body: form
+      });
+  
+      const data = await res.json();
+  
+      // Replace "Thinking..." with actual answer
+      setConversation(prev => {
+        const updated = [...prev];
+        updated[updated.length - 1] = { role: "assistant", content: data.answer || "Error generating answer" };
+        return updated;
+      });
+  
+    } catch (error) {
+      console.error("❌ Failed to get answer:", error);
+      setConversation(prev => {
+        const updated = [...prev];
+        updated[updated.length - 1] = { role: "assistant", content: "❌ Failed to get answer" };
+        return updated;
+      });
+    }
   };
+  
 
 
   return (
@@ -99,6 +151,10 @@ export default function PaperSummarizer({ setFileUrl, setFilename: setFilenamePr
         onChange={(e) => {
           setFile(e.target.files[0]);
           console.log("📄 File selected:", e.target.files[0]);
+
+          // reset conversation for new paper 
+          setConversation([]);
+          setCurrentQuestion("");
         }}
         className="mb-4"
       />
@@ -140,26 +196,33 @@ export default function PaperSummarizer({ setFileUrl, setFilename: setFilenamePr
 
           {/* Chat UI */}
           <div className="mt-8 border-t pt-4">
-            <h2 className="text-xl font-semibold mb-2">Ask about the Paper</h2>
+            <h2 className="text-xl font-semibold mb-2">Chat with Paper</h2>
+            <div className="max-h-64 overflow-y-auto space-y-2 mb-2">
+              {conversation.map((msg, idx) => (
+                <div
+                  key={idx}
+                  className={`p-2 rounded ${
+                    msg.role === "user" ? "bg-blue-100 text-blue-900 self-end" : "bg-gray-100 text-gray-900"
+                  }`}
+                >
+                  <ReactMarkdown>{msg.content}</ReactMarkdown>
+                </div>
+              ))}
+            </div>
+
             <textarea
-              value={question}
-              onChange={(e) => setQuestion(e.target.value)}
-              placeholder="Type your question about this paper..."
+              value={currentQuestion}
+              onChange={(e) => setCurrentQuestion(e.target.value)}
+              placeholder="Type your question..."
               className="w-full border p-2 rounded mb-2"
             />
             <button
               onClick={handleAsk}
-              disabled={!filename}
+              disabled={!filename || !currentQuestion}
               className="bg-green-600 text-white px-4 py-2 rounded"
             >
-              Ask
+              Send
             </button>
-
-            {answer && (
-              <div className="mt-4 bg-gray-50 p-4 rounded border">
-                <ReactMarkdown>{answer}</ReactMarkdown>
-              </div>
-            )}
           </div>
         </>
       )}
