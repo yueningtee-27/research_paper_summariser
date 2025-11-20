@@ -6,6 +6,8 @@ from summarizer import extract_pdf_text, summarize_paper_text
 from qa import  create_vectorstore_from_pdf, answer_question_with_rag
 from ma_summarizer.agents import GrobidSectionAgent, SectionSummaryAgent, SummaryAggregatorAgent, summarize_sections_parallel, SummaryHighlighterAgent
 from ma_summarizer.highlight_agent import HighlightAgent
+import uuid
+
 app = FastAPI(title="PDF Summarizer API")
 
 app.add_middleware(
@@ -23,17 +25,18 @@ def save_temp_pdf(upload_file: UploadFile) -> str:
         return tmp.name
 
 # test solution: store uplaoded paper text in memory 
-DOCUMENT_STORE = {}
 vectorstores = {}
 
 @app.post("/summarize")
 async def summarize_api(pdf: UploadFile = File(...), summary_type: str = Form("detailed")):
     start_time = time.time()
     print("\n[🟢] Received request")
-    print(f"Filename to store in DOCUMENT_STORE as: {pdf.filename}")
 
     pdf_path = save_temp_pdf(pdf)
     print(f"[📄] Saved PDF temporarily: {pdf_path}")
+
+    paper_id = str(uuid.uuid4())
+    print("Paper ID: ", paper_id)
 
     try:
         # 1️⃣ Extract text
@@ -41,10 +44,6 @@ async def summarize_api(pdf: UploadFile = File(...), summary_type: str = Form("d
         print("[🔍] Extracting text from PDF...")
         paper_text = extract_pdf_text(pdf_path)
         print(f"[✅] Text extracted ({len(paper_text)} chars) in {time.time() - t1:.2f}s")
-
-        # save text to store (keyed by filename)
-        DOCUMENT_STORE[pdf.filename] = paper_text
-        print(f"Filename stored in DOCUMENT_STORE as: {pdf.filename}")
 
         # 2️⃣ Truncate long text
         paper_text = paper_text[:400000]
@@ -59,6 +58,7 @@ async def summarize_api(pdf: UploadFile = File(...), summary_type: str = Form("d
         print(f"[🏁] Total time: {time.time() - start_time:.2f}s\n")
         return JSONResponse({
             "summary": summary,
+            "paper_id": paper_id,
             "filename": pdf.filename})
 
     except Exception as e:
@@ -114,10 +114,6 @@ async def multi_agent_summarize(pdf: UploadFile = File(...)):
     # 2. Summarize each section 
     t2 = time.time()
     section_summaries = await summarize_sections_parallel(sections, section_agent)
-    # for s in sections:
-    #     print(f"[🤖] Summarizing section: {s['heading']}...")
-    #     summary = section_agent.summarize(s['heading'], s['content'])
-    #     section_summaries.append({"section": s['heading'], "summary": summary})
     print(f"[✅] Section summarization done in {time.time() - t2:.2f}s")
 
 

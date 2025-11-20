@@ -4,5 +4,6 @@ backend/node_modules/
 
 # Environment files 
 .env
-__pycache__/
+backend/__pycache__/
+backend/ma_summarizer/__pycache__/
 venv
