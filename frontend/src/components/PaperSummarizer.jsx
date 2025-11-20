@@ -1,10 +1,17 @@
 import { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 
-export default function PaperSummarizer({ setFileUrl, setFilename: setFilenameProp }) {
+export default function PaperSummarizer({ 
+  setFileUrl, 
+  setFilename: setFilenameProp, 
+  loadedConversation, 
+  selectedPaperId, 
+  onUpdateChatHistory 
+}) {
   const [file, setFile] = useState(null);
   const [summaryType, setSummaryType] = useState("short");
   const [summary, setSummary] = useState("");
+  const [paperId, setPaperId] = useState(null);
   const [filename, setFilename] = useState("");
   const [loading, setLoading] = useState(false);
   const [progress, setProgress] = useState(""); // new progress log text
@@ -29,6 +36,45 @@ export default function PaperSummarizer({ setFileUrl, setFilename: setFilenamePr
     }
   }, [file, setFileUrl]);
 
+  //Apply past conversation when user clicks sidebar
+  useEffect(() => {
+    if (loadedConversation && loadedConversation.length > 0) {
+      setConversation(loadedConversation);
+    }
+  }, [loadedConversation]);
+
+  // Load existing conversation for upload (none)
+  useEffect(() => {
+    if (!paperId) return;
+    
+    const all = JSON.parse(localStorage.getItem("chatHistory") || "{}");
+  
+    if (all[paperId]) {
+      setConversation(all[paperId].conversation);
+    } else {
+      // new upload → start empty
+      setConversation([]);
+    }
+  }, [paperId]);
+
+  // Save conversation only if it contains messages
+  useEffect(() => {
+    if (!paperId) return;
+  
+    if (conversation.length === 0) return;  // prevent empty saves
+    const all = JSON.parse(localStorage.getItem("chatHistory") || "{}");
+  
+    all[paperId] = {
+      filename: filename,
+      conversation
+    };
+  
+    localStorage.setItem("chatHistory", JSON.stringify(all));
+
+    // notify parent SplitView of update immediately
+    if (onUpdateChatHistory) onUpdateChatHistory(all);
+  }, [paperId, conversation, filename]); // any of these change, the hook will be triggered
+  
   const handleSubmit = async () => {
     if (!file) return alert("Please upload a PDF");
   
@@ -57,6 +103,8 @@ export default function PaperSummarizer({ setFileUrl, setFilename: setFilenamePr
       console.log("[4] Summary received from backend:", data);
   
       setSummary(data.summary || "⚠️ Error: No summary returned.");
+      setPaperId(data.paper_id);
+      console.log("Check paper ID (data.paper_id): ", data.paper_id);
       setFilename(data.filename);
       if (setFilenameProp && data.filename) {
         setFilenameProp(data.filename);
