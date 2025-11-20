@@ -4,3 +4,4 @@ backend/node_modules/
 
 # Environment files 
 .env
+__pycache__/
